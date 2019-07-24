@@ -1,0 +1,39 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+/*header {
+  padding: 500px 0 100px;
+}*/
+
+section {
+  padding: 150px 0;
+}
+
+#index_header {
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/UMMed.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#index_header_text{
+  background-color: rgb(64,64,64,0.8);
+  color: white;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+.vl {
+  border-left: 6px solid gray;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+}
