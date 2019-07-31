@@ -25,5 +25,6 @@
     target: '#mainNav',
     offset: 56
   });
+  
 
 })(jQuery); // End of use strict

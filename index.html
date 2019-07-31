@@ -1,3 +1,4 @@
+accordian-more-info
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +12,49 @@
   <title>CMT Genetic Research</title>
 
   <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+  <!-- Accordian toggle buttons -->
+  <script>
+    $(document).ready(function() {
+      // Add minus icon for collapse element which is open by default
+      $(".collapse.show").each(function() {
+        $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+      });
+
+      // Toggle plus minus icon on show hide of collapse element
+      $(".collapse").on('show.bs.collapse', function() {
+        $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+      }).on('hide.bs.collapse', function() {
+        $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+      });
+    });
+  </script>
+
+  <style>
+    .accordian-more-info {
+      margin: 20px;
+    }
+
+    .accordion .fa {
+      margin-right: 0.5rem;
+    }
+  </style>
 
 </head>
 
@@ -33,10 +73,13 @@
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#info">More Info</a>
+            <a class="nav-link js-scroll-trigger" href="#data">Data</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#data">Data</a>
+            <a class="nav-link js-scroll-trigger" href="#protocol">Protocol</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#learn_more">Learn More</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#join">Join</a>
@@ -53,6 +96,7 @@
     </div>
   </header>
 
+  <!-- About -->
   <section id="about">
     <div class="container-fluid">
       <div class="row">
@@ -70,102 +114,14 @@
     </div>
   </section>
 
-  <section id="info" class="bg-light">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-
-
-          <div class="container-fluid">
-            <div class="row" style="height: 100px;">
-                <div class="col">
-                </div>
-
-                <div class="col">
-                  <h2 class="text-center">How it works</h2>
-                </div>
-
-                <div class="col">
-                </div>
-            </div>
-
-            <div class="container-fluid">
-              <div class="row">
-                  <div class="col">
-                    <h5>Participants submit biosample</h5>
-                    <p class="">Participants send a saliva or blood sample for DNA sequencing.</p>
-                  </div>
-
-                  <div class="col text-center">
-                    <img src="https://www.joinallofus.org/sites/default/files/2018-04/participants-share-data-icon_0.png" class="img-fluid" alt="">
-                  </div>
-
-                  <div class="col">
-                  </div>
-              </div>
-            </div>
-
-            <div class="container-fluid" style="height: 50px;">
-              <div class="row">
-                  <div class="col"></div>
-                  <div class="col"><div class="vl" style="height: 50px;"></div></div>
-                  <div class="col"></div>
-              </div>
-            </div>
-
-            <div class="container-fluid">
-              <div class="row">
-                  <div class="col">
-                  </div>
-
-                  <div class="col text-center">
-                    <img src="https://www.joinallofus.org/sites/default/files/2018-04/data-is-protected_0.png" class="img-fluid" alt="">
-                  </div>
-
-                  <div class="col">
-                    <h5>Data is protected</h5>
-                    <p class="">Personal information, like your name, address, and other things that easily identify participants will be removed from all data. Samples are stored in a secure biobank.</p>
-                  </div>
-              </div>
-            </div>
-
-            <div class="container-fluid" style="height: 50px;">
-              <div class="row">
-                  <div class="col"></div>
-                  <div class="col"><div class="vl" style="height: 50px;"></div></div>
-                  <div class="col"></div>
-              </div>
-            </div>
-
-            <div class="container-fluid">
-              <div class="row">
-                  <div class="col">
-                    <h5>Researchers study DNA</h5>
-                    <p class="">DNA samples are sequenced and analyzed to make discoveries about mutated genes.</p>
-                  </div>
-
-                  <div class="col text-center">
-                    <img src="https://www.joinallofus.org/sites/default/files/2018-04/researchers-study-data_0.png" class="img-fluid" alt="">
-                  </div>
-
-                  <div class="col">
-                  </div>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="data">
+  <!-- Data -->
+  <section id="data" class="bg-light">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Data Snapshots</h2>
-          <p class="lead text-justify">Interested in quickly viewing the diversity of the CMT Genetics Research Program participant data? Our Data Snapshots are the fastest way to view the diversity of the CMT Genetics Research Program participant data set. Updated regularly, these snapshots provide visualizations of participant demographics, geographical distribution, and more.</p>
+          <p class="lead text-justify">Interested in quickly viewing the diversity of the CMT Genetics Research Program participant data? Our Data Snapshots are the fastest way to view the diversity of the CMT Genetics Research Program participant data set. Updated regularly, these
+            snapshots provide visualizations of participant demographics, geographical distribution, and more.</p>
           <div class="container">
             <div class="row">
 
@@ -184,7 +140,7 @@
                   <img src="https://www.researchallofus.org/wp-content/themes/research-hub-wordpress-theme/media/2019/02/electronic-health-records.png" alt="" width="125" height="125" class="figure-img img-fluid rounded">
                   <figcaption class="figure-caption">
                     <h3 class="text-center">6,000+</h3>
-                    <p class="text-center font-weight-bolder">Exome Sequencing</p>
+                    <p class="text-center font-weight-bolder">Whole Exomes</p>
                   </figcaption>
                 </figure>
               </div>
@@ -207,7 +163,159 @@
   </section>
 
 
-  <section id="join" class="bg-light">
+  <!-- Protocol -->
+  <section id="protocol">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+
+
+          <div class="container-fluid">
+            <div class="row" style="height: 100px;">
+              <div class="col">
+              </div>
+
+              <div class="col">
+                <h2 class="text-center">How it works</h2>
+              </div>
+
+              <div class="col">
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <h5>Participants submit biosample</h5>
+                  <p class="">Participants send a saliva or blood sample for DNA sequencing.</p>
+                </div>
+
+                <div class="col text-center">
+                  <img src="https://www.joinallofus.org/sites/default/files/2018-04/participants-share-data-icon_0.png" class="img-fluid" alt="">
+                </div>
+
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid" style="height: 50px;">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                  <div class="vl" style="height: 50px;"></div>
+                </div>
+                <div class="col"></div>
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                </div>
+
+                <div class="col text-center">
+                  <img src="https://www.joinallofus.org/sites/default/files/2018-04/data-is-protected_0.png" class="img-fluid" alt="">
+                </div>
+
+                <div class="col">
+                  <h5>Data is protected</h5>
+                  <p class="">Personal information, like your name, address, and other things that easily identify participants will be removed from all data. Samples are stored in a secure biobank.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid" style="height: 50px;">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                  <div class="vl" style="height: 50px;"></div>
+                </div>
+                <div class="col"></div>
+              </div>
+            </div>
+
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <h5>Researchers study DNA</h5>
+                  <p class="">DNA samples are sequenced and analyzed to make discoveries about mutated genes.</p>
+                </div>
+
+                <div class="col text-center">
+                  <img src="https://www.joinallofus.org/sites/default/files/2018-04/researchers-study-data_0.png" class="img-fluid" alt="">
+                </div>
+
+                <div class="col">
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Learn More -->
+  <section id="learn_more" class="bg-light">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Learn more</h2>
+          <p class="lead">To learn more about our study and genetics</p>
+
+          <!-- Accordian -->
+          <div class="accordian-more-info">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"><i class="fa fa-plus"></i> What is HTML?</button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i> What is Bootstrap?</button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-plus"></i> What is CSS?</button>
+                </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section id="join">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -219,6 +327,8 @@
     </div>
   </section>
 
+
+
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
@@ -227,15 +337,6 @@
     <!-- /.container -->
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom JavaScript for this theme -->
-  <script src="js/scrolling-nav.js"></script>
 
 </body>
 
