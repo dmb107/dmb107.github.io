@@ -29,10 +29,17 @@ accordian-more-info
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
 
+  <!-- Email form -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='contact.css' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+  <script src="contact.js"></script>
+
   <!-- SurveyJS -->
   <script src="https://unpkg.com/jquery"></script>
   <script src="https://surveyjs.azureedge.net/1.1.1/survey.jquery.js"></script>
-  <link href="https://surveyjs.azureedge.net/1.1.1/survey.css" type="text/css" rel="stylesheet"/>
+  <link href="https://surveyjs.azureedge.net/1.1.1/survey.css" type="text/css" rel="stylesheet" />
 
   <!-- Accordian toggle buttons -->
   <script>
@@ -283,7 +290,8 @@ accordian-more-info
                 </div>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p>CMT stands for Charcot-Marie-Tooth disease and is a spectrum of genetic disorders that affects the peripheral nerves (unlike muscular dystrophies, which affect the muscles themselves). CMT occurs in both genders and all ethnic groups, affecting more than 3 million people worldworld. Learn more <a href="https://www.cmtausa.org/understanding-cmt/what-is-cmt/" target="_blank">here</a> and <a href="https://www.mda.org/disease/charcot-marie-tooth" target="_blank">here.</a></p>
+                    <p>CMT stands for Charcot-Marie-Tooth disease and is a spectrum of genetic disorders that affects the peripheral nerves (unlike muscular dystrophies, which affect the muscles themselves). CMT occurs in both genders and all ethnic groups,
+                      affecting more than 3 million people worldworld. Learn more <a href="https://www.cmtausa.org/understanding-cmt/what-is-cmt/" target="_blank">here</a> and <a href="https://www.mda.org/disease/charcot-marie-tooth" target="_blank">here.</a></p>
                   </div>
                 </div>
               </div>
@@ -295,7 +303,8 @@ accordian-more-info
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p>CMT is not caused by anything a person does and is not contangious. CMT is hereditary, meaning it can run in a family from one generation to the next. Learn more about CMT inheritance patterns <a href="https://www.cmtausa.org/understanding-cmt/types-of-cmt/genetics-and-inheritance/" target="_blank">here</a> and <a href="https://www.mda.org/disease/charcot-marie-tooth/causes-inheritance" target="_blank">here.</a></p>
+                    <p>CMT is not caused by anything a person does and is not contangious. CMT is hereditary, meaning it can run in a family from one generation to the next. Learn more about CMT inheritance patterns <a href="https://www.cmtausa.org/understanding-cmt/types-of-cmt/genetics-and-inheritance/"
+                        target="_blank">here</a> and <a href="https://www.mda.org/disease/charcot-marie-tooth/causes-inheritance" target="_blank">here.</a></p>
                   </div>
                 </div>
               </div>
@@ -307,7 +316,8 @@ accordian-more-info
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p>After a patient is clinically diagnosed with CMT, a neurologist may arrange for genetic testing. Genetic testing can provide a patient with more specific diagnosis information, including the mutated gene and subtype. Genetic testing can be useful for many reasons:
+                    <p>After a patient is clinically diagnosed with CMT, a neurologist may arrange for genetic testing. Genetic testing can provide a patient with more specific diagnosis information, including the mutated gene and subtype. Genetic testing
+                      can be useful for many reasons:
                       <ul>
                         <li>Confirm CMT diagnosis since early symptoms can mimic other disorders</li>
                         <li>Enable family members to determine if they are affected</li>
@@ -327,7 +337,8 @@ accordian-more-info
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p>DNA sequencing is...</a></p>
+                    <p>DNA sequencing is...</a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -353,6 +364,80 @@ accordian-more-info
           <script type="text/javascript" src="./quiz.js"></script>
 
           <p class="lead"><a href="https://redcap.miami.edu/surveys/?s=MCWPYKLTXN">Click here to consent to join.</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Email contact form -->
+  <section id="contact">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <form id="contact-form" method="post" action="contact.php" role="form">
+            <div class="messages"></div>
+
+            <div class="controls">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_name">First name *</label>
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your first name" required="required" data-error="Firstname is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_lastname">Last name *</label>
+                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your last name" required="required" data-error="Lastname is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_email">Email *</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_need">Please specify your need *</label>
+                    <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
+                            <option value=""></option>
+                            <option value="Request quotation">Request quotation</option>
+                            <option value="Request order status">Request order status</option>
+                            <option value="Request copy of an invoice">Request copy of an invoice</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="form_message">Message *</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <input type="submit" class="btn btn-success btn-send" value="Send message">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="text-muted">
+                    <strong>*</strong> These fields are required.</p>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
