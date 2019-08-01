@@ -29,6 +29,11 @@ accordian-more-info
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
 
+  <!-- SurveyJS -->
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="https://surveyjs.azureedge.net/1.1.1/survey.jquery.js"></script>
+  <link href="https://surveyjs.azureedge.net/1.1.1/survey.css" type="text/css" rel="stylesheet"/>
+
   <!-- Accordian toggle buttons -->
   <script>
     $(document).ready(function() {
@@ -264,8 +269,8 @@ accordian-more-info
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Learn more</h2>
-          <p class="lead">To learn more about our study and genetics</p>
+          <h2>Want more information?</h2>
+          <p class="lead">Learn more about CMT, genetics, and our study below</p>
 
           <!-- Accordian -->
           <div class="accordian-more-info">
@@ -273,36 +278,56 @@ accordian-more-info
               <div class="card">
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">
-                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"><i class="fa fa-plus"></i> What is HTML?</button>
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"><i class="fa fa-plus"></i> What is CMT?</button>
                   </h2>
                 </div>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+                    <p>CMT stands for Charcot-Marie-Tooth disease and is a spectrum of genetic disorders that affects the peripheral nerves (unlike muscular dystrophies, which affect the muscles themselves). CMT occurs in both genders and all ethnic groups, affecting more than 3 million people worldworld. Learn more <a href="https://www.cmtausa.org/understanding-cmt/what-is-cmt/" target="_blank">here</a> and <a href="https://www.mda.org/disease/charcot-marie-tooth" target="_blank">here.</a></p>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingTwo">
                   <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i> What is Bootstrap?</button>
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i> What causes CMT?</button>
                   </h2>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                    <p>CMT is not caused by anything a person does and is not contangious. CMT is hereditary, meaning it can run in a family from one generation to the next. Learn more about CMT inheritance patterns <a href="https://www.cmtausa.org/understanding-cmt/types-of-cmt/genetics-and-inheritance/" target="_blank">here</a> and <a href="https://www.mda.org/disease/charcot-marie-tooth/causes-inheritance" target="_blank">here.</a></p>
                   </div>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header" id="headingThree">
                   <h2 class="mb-0">
-                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-plus"></i> What is CSS?</button>
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-plus"></i> What is genetic testing?</button>
                 </h2>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                    <p>After a patient is clinically diagnosed with CMT, a neurologist may arrange for genetic testing. Genetic testing can provide a patient with more specific diagnosis information, including the mutated gene and subtype. Genetic testing can be useful for many reasons:
+                      <ul>
+                        <li>Confirm CMT diagnosis since early symptoms can mimic other disorders</li>
+                        <li>Enable family members to determine if they are affected</li>
+                        <li>Help make decisions regarding family planning</li>
+                        <li>Learn about potential subtype-specific therapies</li>
+                      </ul>
+                      Learn more about genetic counseling <a href="https://www.nsgc.org/page/patients" target="_blank">here.</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"><i class="fa fa-plus"></i> What is DNA sequencing?</button>
+                  </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p>DNA sequencing is...</a></p>
                   </div>
                 </div>
               </div>
@@ -320,8 +345,14 @@ accordian-more-info
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Join our study</h2>
-          <p class="lead">To join our study, please review and submit the informed consent</p>
-          <a href="https://redcap.miami.edu/surveys/?s=MCWPYKLTXN">Click here to consent to join.</a>
+          <p class="lead">If you are interested in joining our study, please answer the questions below to verify your eligibility.</p>
+
+
+          <div id="surveyElement"></div>
+          <div id="surveyResult"></div>
+          <script type="text/javascript" src="./quiz.js"></script>
+
+          <p class="lead"><a href="https://redcap.miami.edu/surveys/?s=MCWPYKLTXN">Click here to consent to join.</a></p>
         </div>
       </div>
     </div>
