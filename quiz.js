@@ -21,7 +21,7 @@ var json = {
             title: "Have you been clinically diagnosed with one of the following conditions?",
             visibleIf: "{clinicallyDiagnosed}='Yes'",
             isRequired: true,
-            choices: ['Charcot-Marie-Tooth disease','Hereditary motor and senosry neuropathy', 'Hereditary motor neuropathy', 'Hereditary motor and autonomic neuropathy', 'Spinal muscular atrophy', 'None of these'] // if none of these: email form for more info
+            choices: ['Charcot-Marie-Tooth disease','Hereditary motor and sensory neuropathy', 'Hereditary motor neuropathy', 'Hereditary motor and autonomic neuropathy', 'Spinal muscular atrophy', 'None of these'] // if none of these: email form for more info
         }, {
             type: "radiogroup",
             choices: [
